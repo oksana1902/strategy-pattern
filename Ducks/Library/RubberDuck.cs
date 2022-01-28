@@ -5,22 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Library
-
 {
-    public class RedheadDuck : Duck, IFlyable, IQuackable
+    public class RubberDuck : Duck, IQuackable
     {
         public override string display()
         {
-            return "display " + " " + this.GetType();
+            return "display " + this.GetType();
         }
         public string Quack()
         {
             return "Quack" + " " + this.GetType();
         }
-        public string Fly()
-        {
-            return "Fly" + " " + this.GetType();
-        }
     }
 }
-
