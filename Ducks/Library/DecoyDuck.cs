@@ -6,9 +6,10 @@ namespace Library
 {
     public class DecoyDuck : Duck
     {
-        public override string display()
+        public DecoyDuck()
         {
-            return "display" + " " + this.GetType();
+            flyBehavior = new FlyNoWay();
+            quackBehavior = new MuteQuack();
         }
     }
 }  

@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Library
+
 {
-    public class RubberDuck : Duck
+    public class MallardDuck : Duck
     {
-        public RubberDuck()
+        public MallardDuck()
         {
-            flyBehavior = new FlyNoWay();
-            quackBehavior = new Squeak();
+            flyBehavior = new FlyWithWings();
+            quackBehavior = new DQuack();
         }
     }
 }

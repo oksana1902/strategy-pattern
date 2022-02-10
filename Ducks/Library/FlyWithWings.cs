@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    public interface IFlyable
+    class FlyWithWings : IFlyBehavior
     {
-        string Fly();
+        public string Fly()
+        {
+            return "I'm flying" ;
+        }
     }
+
 }

@@ -11,25 +11,27 @@ namespace Ducks
     {
         static void Main(string[] args)
         {
-            MallarDuck duck1 = new MallarDuck();
+            MallardDuck duck1 = new MallardDuck();
+            duck1.PerformFly();
+            duck1.PerformQuack();
             RedheadDuck duck2 = new RedheadDuck();
             RubberDuck duck3 = new RubberDuck();
             DecoyDuck duck4 = new DecoyDuck();
+
+            IFlyBehavior flyBehavior = new FlyNoWay();
+            IQuackBehavior quackBehavior = new DQuack();
+
+            duck1.SetFlyBehavior(flyBehavior);
+            duck3.SetQuackBehavior(quackBehavior);
 
             Duck[] mas = new Duck[] { duck1, duck2, duck3, duck4 };
 
             for (int i = 0; i < mas.Length; i++)
             {
-                Console.WriteLine(mas[i].display());
-                Console.WriteLine(mas[i].swim());
-                if (mas[i] is IFlyable)
-                {
-                    Console.WriteLine((mas[i] as IFlyable).Fly());
-                }
-                if (mas[i] is IQuackable)
-                {
-                    Console.WriteLine((mas[i] as IQuackable).Quack());
-                }
+                Console.WriteLine(mas[i].Display());
+                Console.WriteLine(mas[i].Swim());
+                Console.WriteLine(mas[i].PerformFly());
+                Console.WriteLine(mas[i].PerformQuack());
                 Console.WriteLine();
             }
 
